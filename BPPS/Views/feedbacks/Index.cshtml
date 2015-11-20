@@ -1,4 +1,8 @@
 ﻿@model IEnumerable<BPPS.Models.feedbacks>
+<<<<<<< HEAD
+
+=======
+>>>>>>> remotes/origin/Miki
 @{
     ViewBag.Title = "Index";
 }
@@ -63,13 +67,21 @@
                 @feedback.AspNetUsers.Email
             </td>
             <td>
+<<<<<<< HEAD
+                @Html.ActionLink("Details", "Details", new { id =feedback.feedback_id })
+=======
                 @Html.ActionLink("Details", "Details", new { id = feedback.feedback_id })
+>>>>>>> remotes/origin/Miki
             </td>
             <td>
                 <img src="~/Content/Images/pdf_download.png" width="30" height="30" />
             </td>
             <td>
+<<<<<<< HEAD
+                <img src="~/Content/Images/excel_download.png" width="30" height="30" />
+=======
                 <img type="" src="~/Content/Images/excel_download.png" width="30" height="30" />
+>>>>>>> remotes/origin/Miki
             </td>
         </tr>
     }
@@ -84,7 +96,11 @@
     </p>
 }
 
+<<<<<<< HEAD
+ 
+=======
 
+>>>>>>> remotes/origin/Miki
 
 <h3>All feedbacks</h3>
 <table class="table">
@@ -114,6 +130,40 @@
         <th></th>
     </tr>
 
+<<<<<<< HEAD
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.project_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Projects.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.initiated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.received)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AspNetUsers.FirstName)
+            @Html.DisplayFor(modelItem => item.AspNetUsers.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AspNetUsers.Email)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.feedback_id }) 
+        </td>
+        <td>
+            <img src="~/Content/Images/pdf_download.png" width="30" height="30" />
+        </td>
+        <td>
+            <img src="~/Content/Images/excel_download.png" width="30" height="30"/>
+        </td>
+    </tr>
+}
+=======
     @foreach (var item in Model)
     {
         <tr>
@@ -147,5 +197,6 @@
             </td>
         </tr>
     }
+>>>>>>> remotes/origin/Miki
 
 </table>

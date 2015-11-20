@@ -9,11 +9,14 @@ using System.Web.Mvc;
 using BPPS.Models;
 using System.Web.Security;
 using Microsoft.AspNet.Identity;
+<<<<<<< HEAD
+=======
 using ExporterObjects;
 using System.Web.UI.WebControls;
 using System.IO;
 using System.Web.UI;
 using Rotativa;
+>>>>>>> remotes/origin/Miki
 
 namespace BPPS.Controllers
 {
@@ -47,6 +50,8 @@ namespace BPPS.Controllers
 
             return View();
         }
+<<<<<<< HEAD
+=======
 
         public virtual ActionResult ExportTo(int id)
         {
@@ -58,5 +63,6 @@ namespace BPPS.Controllers
             exp.ExportTo(list, (ExportToFormat)id, filePathExport);
             return this.File(filePathExport, "application/octet-stream", System.IO.Path.GetFileName(filePathExport));
         }
+>>>>>>> remotes/origin/Miki
     }
 }

@@ -44,6 +44,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
     <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
       <Private>True</Private>
@@ -56,13 +58,23 @@
       <HintPath>..\packages\iTextSharp-LGPL.4.1.6\lib\iTextSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
+>>>>>>> remotes/origin/Miki
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+<<<<<<< HEAD
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+=======
     <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Rotativa.1.6.4\lib\net40\Rotativa.dll</HintPath>
+>>>>>>> remotes/origin/Miki
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -128,10 +140,13 @@
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+<<<<<<< HEAD
+=======
     <Reference Include="Westwind.RazorHosting, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Westwind.RazorHosting.1.01\lib\net40\Westwind.RazorHosting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+>>>>>>> remotes/origin/Miki
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
@@ -241,7 +256,10 @@
     <Compile Include="Models\departments.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
     <Compile Include="Models\Export.cs" />
+>>>>>>> remotes/origin/Miki
     <Compile Include="Models\FeedbackForm.cs" />
     <Compile Include="Models\feedbacks.cs">
       <DependentUpon>DatabaseModel.tt</DependentUpon>
@@ -270,11 +288,20 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+    <Content Include="Content\bootstrap-submenu.css" />
+    <Content Include="Content\bootstrap-submenu.min.css" />
+=======
+>>>>>>> remotes/origin/Miki
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\excel_download.png" />
     <Content Include="Content\Images\logo_siemens.png" />
     <Content Include="Content\Images\pdf_download.png" />
+<<<<<<< HEAD
+    <Content Include="Content\PagedList.css" />
+=======
+>>>>>>> remotes/origin/Miki
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -289,8 +316,13 @@
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
       <LastGenOutput>DatabaseModel.cs</LastGenOutput>
     </Content>
+<<<<<<< HEAD
+    <Content Include="Scripts\bootstrap-submenu.js" />
+    <Content Include="Scripts\bootstrap-submenu.min.js" />
+=======
     <Content Include="readme_exporter.txt" />
     <Content Include="Rotativa\wkhtmltopdf.exe" />
+>>>>>>> remotes/origin/Miki
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\DatabaseModel.edmx">
@@ -300,7 +332,12 @@
     <Content Include="Models\DatabaseModel.edmx.diagram">
       <DependentUpon>DatabaseModel.edmx</DependentUpon>
     </Content>
+<<<<<<< HEAD
+    <Content Include="Content\bootstrap-submenu.css.map" />
+    <Content Include="Content\bootstrap-submenu.min.css.map" />
+=======
     <Content Include="App_Browsers\qt.browser" />
+>>>>>>> remotes/origin/Miki
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -396,11 +433,18 @@
     <Content Include="Views\AspNetRoles\Details.cshtml" />
     <Content Include="Views\AspNetRoles\Edit.cshtml" />
     <Content Include="Views\AspNetRoles\Index.cshtml" />
+<<<<<<< HEAD
+    <Content Include="Views\Projects\IndexMy.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+=======
     <Content Include="Views\Home\ExportTo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Export\" />
+>>>>>>> remotes/origin/Miki
     <Folder Include="Views\AddProject\" />
     <Folder Include="Views\ViewOfProjects\" />
   </ItemGroup>

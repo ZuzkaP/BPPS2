@@ -12,4 +12,9 @@
         }
     });
 
+<<<<<<< HEAD
+    $('[data-submenu]').submenupicker();
+
+=======
+>>>>>>> remotes/origin/Miki
 });

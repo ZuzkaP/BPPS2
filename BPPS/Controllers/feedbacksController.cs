@@ -9,10 +9,14 @@ using System.Web.Mvc;
 using BPPS.Models;
 using System.Web.Security;
 using Microsoft.AspNet.Identity;
+<<<<<<< HEAD
+
+=======
 using System.Web.UI.WebControls;
 using System.IO;
 using Rotativa;
 using System.Web.UI;
+>>>>>>> remotes/origin/Miki
 
 namespace BPPS.Controllers
 {
@@ -162,6 +166,8 @@ namespace BPPS.Controllers
             }
             base.Dispose(disposing);
         }
+<<<<<<< HEAD
+=======
 
 
         public ActionResult ExportData(int? id)
@@ -193,5 +199,6 @@ namespace BPPS.Controllers
                 FileName = "Report.pdf"
             };
         }
+>>>>>>> remotes/origin/Miki
     }
 }
