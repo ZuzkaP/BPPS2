@@ -549,6 +549,7 @@ C:\Users\Mayki\Desktop\BPPS-master\BPPS\bin\Microsoft.Owin.Security.MicrosoftAcc
 C:\Users\Mayki\Desktop\BPPS-master\BPPS\obj\Debug\BPPS.csprojResolveAssemblyReference.cache
 C:\Users\Mayki\Desktop\BPPS-master\BPPS\obj\Debug\BPPS.dll
 C:\Users\Mayki\Desktop\BPPS-master\BPPS\obj\Debug\BPPS.pdb
+<<<<<<< HEAD
 C:\Users\PC\Downloads\BPPS_new-master (1)\BPPS_new-master\BPPS\bin\roslyn\csc.exe
 C:\Users\PC\Downloads\BPPS_new-master (1)\BPPS_new-master\BPPS\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\PC\Downloads\BPPS_new-master (1)\BPPS_new-master\BPPS\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -622,3 +623,12 @@ C:\Users\PC\Downloads\BPPS_new-master (1)\BPPS_new-master\BPPS\bin\PagedList.dll
 C:\Users\PC\Downloads\BPPS_new-master (1)\BPPS_new-master\BPPS\bin\PagedList.Mvc.dll
 C:\Users\PC\Downloads\BPPS_new-master (1)\BPPS_new-master\BPPS\bin\PagedList.xml
 C:\Users\PC\Downloads\BPPS_new-master (1)\BPPS_new-master\BPPS\bin\PagedList.Mvc.xml
+=======
+C:\Users\Mayki\Desktop\BPPS-master\BPPS\bin\DocumentFormat.OpenXml.dll
+C:\Users\Mayki\Desktop\BPPS-master\BPPS\bin\ExporterObjects.dll
+C:\Users\Mayki\Desktop\BPPS-master\BPPS\bin\iTextSharp.dll
+C:\Users\Mayki\Desktop\BPPS-master\BPPS\bin\Westwind.RazorHosting.dll
+C:\Users\Mayki\Desktop\BPPS-master\BPPS\bin\ExporterObjects.pdb
+C:\Users\Mayki\Desktop\BPPS-master\BPPS\bin\Westwind.RazorHosting.xml
+C:\Users\Mayki\Desktop\BPPS-master\BPPS\bin\Rotativa.dll
+>>>>>>> remotes/origin/Miki

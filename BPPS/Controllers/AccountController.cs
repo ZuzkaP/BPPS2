@@ -86,6 +86,7 @@ namespace BPPS.Controllers
                 case SignInStatus.Success:
                     if (SignInManager.UserManager.IsInRole(spravcaPouzivatelov.FindByEmail(model.Email).Id, role))
                     {
+<<<<<<< HEAD
                         try
                         {
                             spravcaRoly.Create(new IdentityRole(role));
@@ -96,15 +97,29 @@ namespace BPPS.Controllers
                         {
 
                         }
+=======
+                        spravcaRoly.Create(new IdentityRole(role));
+                        ApplicationUser pouzivatel = spravcaPouzivatelov.FindByEmail(model.Email);
+                        spravcaPouzivatelov.AddToRole(pouzivatel.Id, role);
+                        TempData["SuccMsg"] = "You are signed in!";
+>>>>>>> remotes/origin/Miki
                         return RedirectToLocal(returnUrl);
                     }
                     else
                     {
+<<<<<<< HEAD
                         TempData["msg"] = "You have different role! Contact your admin.";
                         AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
                         return View(model);
                     }
                         
+=======
+                        TempData["FailMsg"] = "You have different role! Contact your admin.";
+                        AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+                        return View(model);
+                    }
+
+>>>>>>> remotes/origin/Miki
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -189,6 +204,12 @@ namespace BPPS.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
+<<<<<<< HEAD
+=======
+                    spravcaRoly.Create(new IdentityRole("guest"));
+                    ApplicationUser pouzivatel = spravcaPouzivatelov.FindByEmail(model.Email);
+                    spravcaPouzivatelov.AddToRole(pouzivatel.Id, "guest");
+>>>>>>> remotes/origin/Miki
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);

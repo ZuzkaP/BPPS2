@@ -7,7 +7,10 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using BPPS.Models;
+<<<<<<< HEAD
 using PagedList;
+=======
+>>>>>>> remotes/origin/Miki
 
 namespace BPPS.Controllers
 {
@@ -16,7 +19,11 @@ namespace BPPS.Controllers
         private Entities db = new Entities();
 
         // GET: Projects
+<<<<<<< HEAD
         public ActionResult Index(string location, string segment, string subSegment, string bpssStatus, string status, int? page)
+=======
+        public ActionResult Index(string location, string segment, string subSegment, string bpssStatus, string status)
+>>>>>>> remotes/origin/Miki
         {
             var projects = from m in db.Projects.ToList()
                            select m;
@@ -88,6 +95,7 @@ namespace BPPS.Controllers
             {
                 projects = projects.Where(s => s.status.ToUpper() == status.ToUpper());
             }
+<<<<<<< HEAD
             int pageSize = 5;
             int pageNumber = (page ?? 1);
             ViewBag.Count = projects.ToList().Count();
@@ -172,6 +180,15 @@ namespace BPPS.Controllers
             List<int> user_projects;
             user_projects = db.Users_projects.Where(up => up.project_role != "partner").Select(up => up.project_id).ToList();
             return View(db.Projects.Where(f => user_projects.Any(p => p == f.project_id)).ToList());
+=======
+
+            List<int> user_projects;
+            user_projects = db.Users_projects.Where(up => up.project_role != "partner").Select(up => up.project_id).ToList();
+
+            ViewBag.myProject = db.Projects.Where(f => user_projects.Any(p => p == f.project_id)).ToList();
+            //return View(db.Projects.ToList());
+            return View(projects.ToList());
+>>>>>>> remotes/origin/Miki
         }
 
         // GET: Projects/Details/5
