@@ -5,17 +5,10 @@
 }
 
 <h2>@ViewBag.Title.</h2>
-<<<<<<< HEAD
-@if (@TempData["msg"] != null)
-{
-    <div class="alert alert-danger">
-        <b>Error: </b>@TempData["msg"]
-=======
 @if (@TempData["FailMsg"] != null)
 {
     <div class="alert alert-danger">
         <b>Error: </b>@TempData["FailMsg"]
->>>>>>> remotes/origin/Miki
     </div>
 }
     <div class="row">
@@ -30,17 +23,10 @@
 
                     <div class="form-group">
                         <div class="col-md-10 Roles">
-<<<<<<< HEAD
-                            <label class="radio-inline">@Html.RadioButton("Role", "admin", false) admin</label>
-                            <label class="radio-inline">@Html.RadioButton("Role", "siemens", false) siemens</label>
-                            <label class="radio-inline">@Html.RadioButton("Role", "partner", false) partner</label>
-                            <label class="radio-inline">@Html.RadioButton("Role", "guest", true) guest</label>
-=======
                             @Html.RadioButton("Role", "admin", false) admin
                             @Html.RadioButton("Role", "siemens", false) siemens
                             @Html.RadioButton("Role", "partner", false) partner
                             @Html.RadioButton("Role", "guest", true) guest
->>>>>>> remotes/origin/Miki
                         </div>
                     </div>
 

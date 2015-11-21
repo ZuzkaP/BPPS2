@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
-<<<<<<< HEAD
-    <link rel="stylesheet" href="~/Content/bootstrap-submenu.css" />
-    <link rel="stylesheet" href="~/Content/bootstrap-submenu.css.map" />
-    <link rel="stylesheet" href="~/Content/bootstrap-submenu.min.css" />
-    <link rel="stylesheet" href="~/Content/bootstrap-submenu.min.css.map" />
-=======
->>>>>>> remotes/origin/Miki
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js" type="text/javascript"></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -31,45 +24,6 @@
                    
                 </button>
             </div>
-<<<<<<< HEAD
-            <div class="nav-margin">
-        <!--    <div class="navbar-collapse collapse">-->
-                @if (User.Identity.IsAuthenticated){ 
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Administration", "Index", "departments")</li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            Feedbacks
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Create feedback", "Create", "feedbacks")</li>
-                            <li>@Html.ActionLink("List of feedbacks", "Index", "feedbacks")</li>
-                        </ul>
-                    </li>   
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" tabindex="0" data-submenu aria-expanded="true">
-                        Project managment
-                        <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("Add project", "Create", "Projects")</li>
-                            <li class="dropdown-submenu">
-                                <a tabindex="0">
-                                    Lis of projects
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>@Html.ActionLink("My projects", "IndexMy", "Projects")</li>
-                                    <li>@Html.ActionLink("All projects", "Index", "Projects")</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>}
-                </div>
-                @Html.Partial("_LoginPartial")
-            
-=======
             <br><br><br>
             <div class="navbar-collapse collapse">
                 @if (User.Identity.IsAuthenticated){ 
@@ -92,18 +46,13 @@
                 </ul>}
                 @Html.Partial("_LoginPartial")
             </div>
->>>>>>> remotes/origin/Miki
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-<<<<<<< HEAD
-            <p>© 2015 - Created for Siemens by Mikuláš Lučkanič, Matej Murin, Jakub Mitro, Zuzana Papalová</p>
-=======
             <p>© 2015 - Created for Siemens by Mikuláš Lučkanič, Jakub Mitro,&nbsp;Matej Murin,&nbsp;Zuzana Papalová</p>
->>>>>>> remotes/origin/Miki
         </footer>
     </div>
 

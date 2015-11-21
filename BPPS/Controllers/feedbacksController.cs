@@ -9,14 +9,10 @@ using System.Web.Mvc;
 using BPPS.Models;
 using System.Web.Security;
 using Microsoft.AspNet.Identity;
-<<<<<<< HEAD
-
-=======
 using System.Web.UI.WebControls;
 using System.IO;
 using Rotativa;
 using System.Web.UI;
->>>>>>> remotes/origin/Miki
 
 namespace BPPS.Controllers
 {
@@ -41,7 +37,6 @@ namespace BPPS.Controllers
             {
                 feedbacks = feedbacks.Where(s => projects.Any(p => p.name.ToUpper().Contains(project_name.ToUpper())));
             }
-
 
             return View(db.feedbacks.ToList());
         }
@@ -166,13 +161,10 @@ namespace BPPS.Controllers
             }
             base.Dispose(disposing);
         }
-<<<<<<< HEAD
-=======
-
 
         public ActionResult ExportData(int? id)
         {
-            var datasource = db.feedback_questions.Where(f => f.feedback_id == id).ToList();
+            var datasource = db.feedback_questions.Where(f => f.feedback_id == id).Select(f => new { f.questions.question, f.result, f.comment }).ToList();
 
             GridView gv = new GridView();
             gv.DataSource = datasource;
@@ -199,6 +191,5 @@ namespace BPPS.Controllers
                 FileName = "Report.pdf"
             };
         }
->>>>>>> remotes/origin/Miki
     }
 }
