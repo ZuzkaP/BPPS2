@@ -33,12 +33,7 @@
     <div class="col-md-4">
         <h1> Vitajte </h1>
 @TempData["message"]
-        @if (@TempData["SuccMsg"] != null)
-        {
-            <div class="alert alert-success">
-                <b>Success: </b>@TempData["SuccMsg"]
-            </div>
-        }
+        @TempData["msg"]
         @if (ViewBag.hasNewFeedbacks)
         {
             <h3> Máte nové nevyplnené feedbacky: </h3> <br>

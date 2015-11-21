@@ -9,10 +9,8 @@ using System.Web.Mvc;
 using BPPS.Models;
 using System.Web.Security;
 using Microsoft.AspNet.Identity;
-using System.Web.UI.WebControls;
-using System.IO;
-using Rotativa;
-using System.Web.UI;
+using PagedList;
+
 
 namespace BPPS.Controllers
 {
@@ -21,24 +19,44 @@ namespace BPPS.Controllers
         private Entities db = new Entities();
 
         // GET: feedbacks
-        public ActionResult Index(string project_name)
+        public ActionResult Index(string project_name, int? page)
         {
             var feedbacks = from m in db.feedbacks select m;
             var projects = from m in db.Projects.ToList()
                            select m;
 
             int[] ids = new int[] { };
-            string sessionId = User.Identity.GetUserId();
-            List<int> user_projects;
-            user_projects = db.Users_projects.Where(up => up.Id == sessionId && up.project_role != "partner").Select(up => up.project_id).ToList();
-            ViewBag.myFeedbacks = db.feedbacks.Where(f => user_projects.Any(p => p == f.project_id)).ToList();
-
+       
             if (!String.IsNullOrEmpty(project_name))
             {
                 feedbacks = feedbacks.Where(s => projects.Any(p => p.name.ToUpper().Contains(project_name.ToUpper())));
             }
 
-            return View(db.feedbacks.ToList());
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+
+            return View(db.feedbacks.OrderByDescending(f => f.received).ToPagedList(pageNumber, pageSize));
+        }
+
+        public ActionResult IndexOnMy(int? page)
+        {
+            List<int> user_projects;
+            string sessionId = User.Identity.GetUserId();
+
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+
+            user_projects = db.Users_projects.Where(up => up.Id == sessionId && up.project_role != "partner").Select(up => up.project_id).ToList();
+            return View(db.feedbacks.Where(f => user_projects.Any(p => p == f.project_id)).OrderByDescending(p => p.feedback_id).ToPagedList(pageNumber, pageSize));
+        }
+
+        public ActionResult IndexMy(int? page)
+        {
+            int pageSize = 5;
+            int pageNumber = (page ?? 1);
+            string sessionId = User.Identity.GetUserId();
+
+            return View(db.feedbacks.Where(f => f.Id == sessionId).OrderByDescending(p => p.feedback_id).ToPagedList(pageNumber, pageSize));
         }
 
         // GET: feedbacks/Details/5
@@ -160,36 +178,6 @@ namespace BPPS.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-        public ActionResult ExportData(int? id)
-        {
-            var datasource = db.feedback_questions.Where(f => f.feedback_id == id).Select(f => new { f.questions.question, f.result, f.comment }).ToList();
-
-            GridView gv = new GridView();
-            gv.DataSource = datasource;
-            gv.DataBind();
-            Response.ClearContent();
-            Response.Buffer = true;
-            Response.AddHeader("content-disposition", "attachment; filename=Report.xls");
-            Response.ContentType = "application/ms-excel";
-            Response.Charset = "";
-            StringWriter sw = new StringWriter();
-            HtmlTextWriter htw = new HtmlTextWriter(sw);
-            gv.RenderControl(htw);
-            Response.Output.Write(sw.ToString());
-            Response.Flush();
-            Response.End();
-
-            return Json("Success");
-        }
-
-        public ActionResult PrintPDF(int? id)
-        {
-            return new ActionAsPdf("Details", new { id = id })
-            {
-                FileName = "Report.pdf"
-            };
         }
     }
 }

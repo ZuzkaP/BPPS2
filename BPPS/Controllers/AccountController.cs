@@ -86,19 +86,25 @@ namespace BPPS.Controllers
                 case SignInStatus.Success:
                     if (SignInManager.UserManager.IsInRole(spravcaPouzivatelov.FindByEmail(model.Email).Id, role))
                     {
-                        spravcaRoly.Create(new IdentityRole(role));
-                        ApplicationUser pouzivatel = spravcaPouzivatelov.FindByEmail(model.Email);
-                        spravcaPouzivatelov.AddToRole(pouzivatel.Id, role);
-                        TempData["SuccMsg"] = "You are signed in!";
+                        try
+                        {
+                            spravcaRoly.Create(new IdentityRole(role));
+                            ApplicationUser pouzivatel = spravcaPouzivatelov.FindByEmail(model.Email);
+                            spravcaPouzivatelov.AddToRole(pouzivatel.Id, role);
+                        }
+                        catch
+                        {
+
+                        }
                         return RedirectToLocal(returnUrl);
                     }
                     else
                     {
-                        TempData["FailMsg"] = "You have different role! Contact your admin.";
+                        TempData["msg"] = "You have different role! Contact your admin.";
                         AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
                         return View(model);
                     }
-
+                        
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -183,9 +189,6 @@ namespace BPPS.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    spravcaRoly.Create(new IdentityRole("guest"));
-                    ApplicationUser pouzivatel = spravcaPouzivatelov.FindByEmail(model.Email);
-                    spravcaPouzivatelov.AddToRole(pouzivatel.Id, "guest");
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);
